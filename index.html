@@ -6,24 +6,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>casaList</title>
-  <!-- bootstrap.css CDN import -->
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.min.css' />
 </head>
 
-<body ng-app="casaList"><!-- Make content of <body> available to the application -->
-  <h1>Hello casaList!</h1>
-
+<body ng-app="casaList" ng-controller="casalistController"><!-- Make content of <body> available to the application (ng-app) AND controller (ng-controller) -->
+  <div class="well" ng-repeat="casa in casas"><!-- loop thru $scope's casas property -->
+    <h2>{{ casa.address }}</h2>
+    <p><strong>Type: </strong>{{ casa.type }}</p>
+    <p><strong>Description: </strong>{{ casa.description }}</p>
+    <p><strong>Price: </strong>{{ casa.price | currency :"£":0 }}</p>
+  </div>
 </body>
-<!-- Bootstrap.js CDN import -->
-<script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/js/bootstrap.min.js'></script>
 
-<!-- Angular-ui-bootstrap CDN import -->
+<!-- AngularJS, angular-ui-bootstrap CDN import -->
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.13.4/ui-bootstrap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.13.4/ui-bootstrap-tpls.min.js"></script>
 
-<!-- AngularJS CDN import -->
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
-
-<!-- Custom app.js -->
-<script src="app.js"></script>
+<script src="app.js"></script> <!-- Application -->
+<script src="scripts/casalistController.js"></script> <!-- Controller -->
 </html>
