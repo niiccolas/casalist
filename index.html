@@ -6,16 +6,61 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>casaList</title>
-  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.min.css' />
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap.min.css'/>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/js/bootstrap.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+  <link rel="stylesheet" href="main.css">
 </head>
-
 <body ng-app="casaList" ng-controller="casalistController"><!-- Make content of <body> available to the application (ng-app) AND controller (ng-controller) -->
-  <div class="well" ng-repeat="casa in casas"><!-- loop thru $scope's casas property -->
-    <h2>{{ casa.address }}</h2>
-    <p><strong>Type: </strong>{{ casa.type }}</p>
-    <p><strong>Description: </strong>{{ casa.description }}</p>
-    <p><strong>Price: </strong>{{ casa.price | currency :"£":0 }}</p>
+
+<nav class="navbar navbar-dark bg-dark">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a href="#" class="navbar-brand"><h1>🏠 casaList</h1></a>
+    </div>
   </div>
+</nav>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-4" ng-repeat="casa in casas">
+      <div class="card">
+      <!-- LISTING IMAGE -->
+      <img ng-src="images/{{casa.image}}.jpeg" class="card-img-top" alt="{{casa.address}}">
+        <div class="card-body">
+        <h3 class="card-title">{{ casa.price | currency :"£":0 }}</h3>
+        <h4>{{ casa.address }}</h4>
+
+          <!-- PILLS -->
+          <div ng-hide="showDetails === true">
+            <span class="badge badge-pill badge-secondary badge-sm">{{ casa.type }}</span>
+            <span class="badge badge-pill badge-light" >{{ casa.details.area }} ft<sup>2</sup>  </span>
+            <span class="badge badge-pill badge-light" >Bedrooms: {{ casa.details.bedrooms }}</span>
+            <span class="badge badge-pill badge-light" >Bathrooms: {{ casa.details.bathrooms }}</span>
+          </div>
+
+          <!-- DESCRIPTION DETAILS -->
+          <div class="details" ng-show="showDetails === true">
+            <p class="card-text">{{ casa.description }}</p>
+          </div>
+
+        <!-- TOGGLE BUTTONS -->
+        <button class="btn btn-sm btn-success"
+                ng-hide="showDetails === true"
+                ng-click="showDetails = !showDetails">
+                Details <i class="fas fa-info-circle"></i>
+        </button>
+        <button class="btn btn-sm btn-danger"
+                ng-show="showDetails === true"
+                ng-click="showDetails = !showDetails">
+                Close <i class="fas fa-times-circle"></i>
+        </button>
+        </div> <!-- card body-->
+      </div> <!-- card -->
+    </div> <!-- col-md-4 -->
+  </div> <!-- card-columns CLOSING TAG -->
+</div>
 </body>
 
 <!-- AngularJS, angular-ui-bootstrap CDN import -->
