@@ -9,4 +9,8 @@ angular
     }).error(function (error) {
       console.log(error);
     });
+
+    $scope.sayHello = function (){
+      console.log('Hello there!');
+    };
   });
