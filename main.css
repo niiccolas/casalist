@@ -1,6 +1,13 @@
 h1 {
   font-weight: 200;
+
 }
+
+.emoji {
+  position: relative;
+  top: -5px;
+}
+
 h4 {
   font-weight: 200;
   font-size: 2rem;
