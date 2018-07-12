@@ -1,0 +1,22 @@
+{
+  "name": "casalist",
+  "version": "1.0.0",
+  "description": "An AngularJS house listing single-page application using a mock json endpoint.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/niiccolas/casalist.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/niiccolas/casalist/issues"
+  },
+  "homepage": "https://github.com/niiccolas/casalist#readme",
+  "dependencies": {
+    "angulargrid": "^0.6.5"
+  }
+}

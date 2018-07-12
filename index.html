@@ -6,11 +6,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>casaList</title>
+
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap.min.css'/>
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/js/bootstrap.min.js'></script>
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+  <link rel="stylesheet" href="ag-grid.css">
   <link rel="stylesheet" href="main.css">
+
 </head>
 <body ng-app="casaList" ng-controller="casalistController"><!-- Make content of <body> available to the application (ng-app) AND controller (ng-controller) -->
 
@@ -23,9 +24,9 @@
 </nav>
 
 <div class="container">
-  <div class="row">
-    <div class="col-md-4" ng-repeat="casa in casas">
-      <div class="card">
+  <div class="dynamic-grid" angular-grid="casas" ag-grid-width="300" ag-gutter-size="10" ag-id="gallery" ag-refresh-on-img-load="true">
+    <!-- <div class="col-md-4" ng-repeat="casa in casas"> -->
+      <div class="card grid" data-ng-repeat="casa in casas">
       <!-- LISTING IMAGE -->
       <img ng-src="images/{{casa.image}}.jpeg" class="card-img-top" alt="{{casa.address}}">
         <div class="card-body">
@@ -58,17 +59,18 @@
         </button>
         </div> <!-- card body-->
       </div> <!-- card -->
-    </div> <!-- col-md-4 -->
-  </div> <!-- card-columns CLOSING TAG -->
-</div>
-</body>
+     </div> <!--  col-md-4 -->
+  <!-- </div> card-columns CLOSING TAG -->
+</div> <!-- container -->
 
 <!-- AngularJS, angular-ui-bootstrap CDN import -->
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.13.4/ui-bootstrap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.13.4/ui-bootstrap-tpls.min.js"></script>
 
+<script src="scripts/angulargrid.min.js"></script> <!-- angulargrid -->
 <script src="app.js"></script> <!-- Application -->
 <script src="scripts/casalistController.js"></script> <!-- Controller -->
 <script src="scripts/casalistFactory.js"></script> <!-- Factory -->
+</body>
 </html>

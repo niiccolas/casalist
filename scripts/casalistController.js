@@ -1,5 +1,5 @@
 // Reference the 'casaList' module defined in /app.js
-angular
+    angular
   .module('casaList')
   .controller('casalistController', function ($scope, casalistFactory) { // inject the $scope object in controller
     $scope.casas;
