@@ -6,12 +6,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>casaList</title>
+
+  <!-- AngularJS, angular-ui-bootstrap CDN import -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.13.4/ui-bootstrap.min.js"defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.13.4/ui-bootstrap-tpls.min.js" defer></script>
+
+  <script src="app.js" defer></script> <!-- Application -->
+  <script src="scripts/casalistController.js" defer></script> <!-- Controller -->
+  <script src="scripts/casalistFactory.js" defer></script> <!-- Factory -->
+
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap.min.css'/>
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/js/bootstrap.min.js'></script>
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
   <link rel="stylesheet" href="main.css">
 </head>
+
 <body ng-app="casaList" ng-controller="casalistController"><!-- Make content of <body> available to the application (ng-app) AND controller (ng-controller) -->
 
 <nav class="navbar navbar-dark bg-dark">
@@ -62,13 +71,4 @@
   </div> <!-- card-columns CLOSING TAG -->
 </div>
 </body>
-
-<!-- AngularJS, angular-ui-bootstrap CDN import -->
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.13.4/ui-bootstrap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.13.4/ui-bootstrap-tpls.min.js"></script>
-
-<script src="app.js"></script> <!-- Application -->
-<script src="scripts/casalistController.js"></script> <!-- Controller -->
-<script src="scripts/casalistFactory.js"></script> <!-- Factory -->
 </html>
